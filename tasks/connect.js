@@ -1,6 +1,9 @@
 'use strict';
+console.log('hello');
 var getAvailPort = require('./utils/getAvailPort');
-var port = getAvailPort(8888);
+console.log(getAvailPort);
+var port = getAvailPort(9999);
+console.log(port);
 
 module.exports = function (grunt, options) {
     return {
@@ -15,7 +18,7 @@ module.exports = function (grunt, options) {
         },
         devserver: {
             options: {
-                port: 8888
+                port: 9999
             }
         },
         testserver: {

@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   // Utility to load the different option files
   // based on their names
   function loadConfig(path) {
-    var glob = require('lodash');
+    var glob = global._;
     var object = {};
     var key;
 
@@ -27,11 +27,11 @@ module.exports = function(grunt) {
 
   // Load all the tasks options in tasks/options base on the name:
   // watch.js => watch{}
-  grunt.util._.extend(config, loadConfig('./tasks/options/'));
+  //grunt.util._.extend(config, loadConfig('./tasks/options/'));
 
   grunt.initConfig(config);
 
-  require('load-grunt-tasks')(grunt);
+  //require('load-grunt-tasks')(grunt);
 
   // Default Task is basically a rebuild
   grunt.registerTask('default', ['angular_architecture_graph', 'bower', 'bump', 'changelog', 'clean', 'concurrent', 'connect', 'coveralls', 'jshint', 'karma', 'ngAnnotate', 'open', 'pkg', 'protractor', 'shell', 'uglify', 'watch']);
